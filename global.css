@@ -96,6 +96,10 @@ header img:nth-child(1){
     border: none;
     cursor: pointer;
 }
+a, li{
+    text-decoration: none;
+    color: #7e7a7a;
+}
 .container-inputs input:nth-child(2):hover{
     background: rgb(253, 68, 68);
 }
@@ -236,6 +240,34 @@ header img:nth-child(1){
 .text--section5 p{
     font-size: 25px;
 }
+footer{
+    background: black;
+    color: #7e7a7a;
+    padding: 16px;
+}
+footer p{
+    font-size: 17px;
+    padding: 0  0 1rem 8rem;
+}
+.selec-footer{
+    padding: 10px;
+    font-size: 17px;
+    background: transparent;
+    margin: 0 0 1rem 7rem;
+    color: white;
+}
+ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(356px,0fr));
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 1rem;
+    row-gap: 1rem;
+    font-size: 18px;
+}
+ul li span{
+    color: #7e7a7a;
+}
 
 @media (max-width:1390px){
     .container-tv img:nth-child(1){
@@ -252,10 +284,16 @@ header img:nth-child(1){
 
 @media (max-width: 1290px){
     .container-tv img:nth-child(1){
-        width: 495px
+        width: 469px
     }
     .container--principal--section4 img{
-        width: 549px
+        width: 482px
+    }
+    .tv-video{
+        width: 455;
+    }
+    ul{
+        grid-template-columns: repeat(auto-fit,minmax(200px,0fr));
     }
 }
 
@@ -349,8 +387,8 @@ header img:nth-child(1){
         width: 332px;
          position: relative;
         top: 3rem;
-        right: 0;
-         left: 6%;
+        right: 9%;
+         
     }
     .container-principal{
         row-gap: 0rem;
@@ -390,7 +428,11 @@ header img:nth-child(1){
     .container--video--section4{
         width: auto;
     }
-}
-.nada{
-    display: none;
+    .container--video--section4 .Dustin-video{
+        right: 0px;
+        left: 0%;
+    }
+    ul{
+        grid-template-columns: repeat(2,minmax(221px,1fr));
+    }
 }
