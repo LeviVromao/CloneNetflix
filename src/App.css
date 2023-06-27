@@ -1,0 +1,370 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.items-container1{
+  background-color: rgb(0 0 0 /76%);
+  height: 100%;
+}
+
+.section1{
+  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/c8c8a0ad-86d6-45f1-b21d-821afa4e5027/a3ec2f55-e2e1-4d98-aa56-f834af40614b/BR-pt-20220801-popsignuptwoweeks-perspective_alpha_website_medium.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  border-bottom: 8px solid #222;
+  margin-bottom: 0;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 122px 0 122px;
+  height: 68px;
+}
+
+.container-buttons{
+  display: flex;
+  column-gap: 1rem;
+}
+
+header .buttons{
+  height: 39px;
+  width: 93px;
+  column-gap: 1rem;
+}
+
+header select{
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  font-size: 14px;
+  width: 100px;
+  text-align: center;
+}
+
+select option{
+  background: gray;
+}
+
+header button{
+  background: red;
+  color: white;
+  font-size: 17px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+header img:nth-child(1){
+  width: 140px;
+}
+
+.container-principal{
+  display: flex;
+  height: 500px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  row-gap: 2.5rem;
+}
+
+.container-principal h1{
+  font-size: 61px;
+  text-align: center;
+  max-width: 800px;
+}
+
+.container-principal p {
+  font-size: 26px;
+  text-align: center;
+  max-width: 998px;
+}
+
+.container-inputs{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 88%;
+  justify-content: center;
+  max-width: 947px;
+}
+
+.container-inputs .email{
+  width: 47%;
+  height: 65px;
+  color: white;
+  font-size: 19px;
+  padding-left: 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid #d7d7d7;
+}
+
+.container-inputs .email::placeholder {
+  color: #7e7a7a;
+  font-weight: 600;
+}
+
+.container-inputs input:nth-child(2){
+  height: 66px;
+  width: 17%;
+  font-size: 18px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+a, li{
+  text-decoration: none;
+  color: #7e7a7a;
+}
+
+.container-inputs input:nth-child(2):hover{
+  background: rgb(253, 68, 68);
+}
+
+.section2{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: black;
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  border-bottom: 8px solid #222;
+
+}
+
+.text-section2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.text-section2 h1{
+  font-size: 3.124rem;
+  line-height: 1.1;
+  margin-bottom: .5rem;
+  max-width: 800px;
+}
+
+.text-section2 p{
+  font-size: 1.625rem;
+  font-weight: 400;
+  max-width: 800px;
+}
+
+
+.tv-father {
+  position: relative;
+}
+
+
+.container-tv img:nth-child(1){
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+
+.netflix-home {
+  position: absolute;
+  top: 97px;
+  left: 79px;
+}
+
+.tv-video {
+  width: 100%;
+}
+
+.section3{
+  background: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-bottom: 8px solid #222;
+  margin-bottom: 0;
+}
+
+.container--section3--principal{
+ position: relative;
+}
+
+.Eleven-photo {
+  width: 100%;
+  position: relative;
+}
+
+.container-cellphone{
+ display: flex;
+ border: 2px solid #222;
+ position: absolute;
+ width: 359px;
+ border-radius: 11px;
+ align-items: center;
+ background: black;
+ column-gap: 30px;
+ bottom: 20px;
+ right: 149px;
+ padding: 11px;
+}
+
+.banner-stranger-things img{
+  width: 40px;
+  border-radius: 10px;
+}
+
+.text--section3{
+  text-align: center;
+}
+
+.text--section3 h1{
+  font-size: 58px;
+}
+
+.text--section3 h3{
+  font-size: 31px;
+}
+
+.gif-download{
+  background: url(https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif) 50% no-repeat;
+  background-size: 100%;
+  content: "";
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 3em;
+  outline: 2px solid #000;
+  outline-offset: -2px;
+  width: 3em;
+}
+
+.section4{
+  display: flex;
+  align-items: center;
+  background: black;
+  border-bottom: 8px solid #222;
+  color: #fff;
+}
+
+.container--principal--section4 {
+  position: relative;
+}
+
+.container--principal--section4 img{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.container--video--section4{
+ position: absolute;
+ top: 41px;
+ left: 107px;
+ width: 63%;
+}
+
+.container--video--section4 .Dustin-video{
+ width: 100%;
+}
+
+.text--section4{
+  width: 84%;
+}
+
+.text--section4 h1 {
+  font-size: 58px;
+}
+
+.text--section4 h2{
+  font-size: 25px;
+}
+
+.section5{
+  display: flex;
+  background-color: #000;
+  border-bottom: 8px solid #222;
+  color: #fff;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.text--section5{
+  width: 29%;
+}
+
+.text--section5 h1{
+  font-size: 56px;
+}
+
+.text--section5 p{
+  font-size: 25px;
+}
+
+footer{
+  background: black;
+  color: #7e7a7a;
+  padding: 16px;
+}
+
+footer p{
+  font-size: 17px;
+  padding: 0  0 1rem 8rem;
+}
+
+.selec-footer{
+  padding: 10px;
+  font-size: 17px;
+  background: transparent;
+  margin: 0 0 1rem 7rem;
+  color: white;
+}
+
+ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(356px,0fr));
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 1rem;
+  row-gap: 1rem;
+  font-size: 18px;
+}
+
+ul li span{
+  color: #7e7a7a;
+}
+
+@media (max-width: 1100px) {
+  .section2 {
+      flex-direction: column;
+  }
+
+  .netflix-home {
+      top: 92px;
+      left: 75px;
+  }
+
+  .section3 {
+      flex-direction: column-reverse;
+  }
+
+  .container-cellphone {
+      width: 345px;
+      right: 155px;
+  }
+
+  header{
+      padding: 0 10px 0 10px;
+  }    
+
+}
