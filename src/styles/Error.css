@@ -1,0 +1,23 @@
+.error{
+    width: 100vw;
+    height: 97vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.error-title {
+    font-size: 50px;
+}
+
+.p-message-error {
+    font-size: 33px;
+}
+
+.message-error {
+    color: red;
+    font-size: 24px;
+}
+

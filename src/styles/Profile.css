@@ -1,0 +1,130 @@
+ .container-home {
+    height: 100vh;
+}
+
+.container-content {
+    background: black;
+    padding-left: 96px;
+    height: 100%;
+}
+
+.header-profile-logo {
+    width: 178px;
+    cursor: pointer;
+    padding: 13px;
+}
+
+.form-title {
+    color: white;
+    width: 100%;
+    font-size: 52px;
+    border-bottom: 1px solid grey;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 89%;
+    align-items: center;
+    gap: 40px;
+    padding-top: 73px;
+    max-width: 628px;
+    margin: 0 auto;
+}
+
+.user-settings {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    border-bottom: 1px solid grey;
+    padding: 13px;
+}
+
+.img-profile {
+    width: 158px;
+    height: 157px;
+    object-fit: fill;
+}
+
+.change-user {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.update-camp {
+    color: white;
+    width: 86%;
+    height: 39px;
+    background: #333;
+    min-width: 231px;
+    padding-left: 8px;
+    border: 1px solid #333;
+}
+
+.update-camp::placeholder {
+    color: white;
+}
+
+.options {
+    display: flex;
+    gap: 26px;
+}
+
+.options-bttn {
+    background: transparent;
+    color: white;
+    width: 99px;
+    height: 35px;
+    letter-spacing: 5px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.options-bttn:hover {
+    background-color: white;
+    color: black;
+}
+
+.options-bttn.last {
+    width: 46%;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 562px) {
+
+    .container-home {
+        flex-direction: column;
+    }
+
+    .container-content {
+        padding: 0;
+    }
+
+    .nav-bar{
+        position: relative;
+        height: 41px;
+        width: 100%;
+    }
+
+    .ul-home {
+        justify-content: center;
+        flex-direction: row;     
+    }
+
+    .outlet {
+        height: 100%;
+    }
+
+    .main {
+        height: 87%;
+    }
+
+    .update-camp {
+        min-width: 191px;
+    }
+
+
+}

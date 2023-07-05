@@ -1,0 +1,77 @@
+.background {
+    height: 100vh;
+    background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/530fc327-2ddb-4038-a3f0-2da2d9ccede1/81c68250-e0f1-4cd8-bf2d-4fd8222163de/BR-pt-20230619-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.main-login {
+    height: 100%;
+    background-color: rgb(0 0 0 /76%);
+}
+
+.logo-netflix {
+    width: 160px;
+    padding: 20px 0 0 20px;
+}
+
+.formLogin {
+    max-width: 437px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 53px;
+    margin: 0 auto;
+    height: 56vh;
+    padding: 45px;
+    border-radius: 7px;
+    background-color: rgba(0,0,0,.75);
+    color: white;
+}
+
+.h1-login {
+    width: 100%;
+    padding-left: 35px;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 33px;
+    width: 100%;
+}
+
+.inputEMail {
+    min-width: 281px;
+    max-width: 289px;
+    background: #333;
+    border-radius: 7px;
+    border: none;
+    height: 42px;
+    padding-left: 13px;
+    font-size: 16px;
+    color: white;
+}
+
+.inputSubmit {
+    min-width: 281px;
+    max-width: 289px;
+    background: red;
+    color: white;
+    height: 42px;
+    border-radius: 8px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.paragraph-login {
+    color: #737373;
+    font-size: 17px;
+}
+
+.link-register {
+    padding-left: 4px;
+    color: white;
+}
