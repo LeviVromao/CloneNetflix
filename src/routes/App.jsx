@@ -8,8 +8,11 @@ export async function action( {request} ) {
     const email = await formData.get('email')
     const user = await createUser(email)
 
-    if(user) return redirect('/home')
-
+    if(user) {
+        const USEROBJ = JSON.stringify(user)
+        localStorage.setItem('user', USEROBJ)
+        return redirect('/home/content')
+    }
     alert(`${email}, já cadastrado no sistema, faça o login :)`)
     return null
 }
