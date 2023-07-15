@@ -1,7 +1,6 @@
 import { Form, redirect, Link } from 'react-router-dom'
 import { createUser } from '../user'
 import '../styles/App.css'
-import { AiOutlineGlobal } from 'react-icons/ai'
 
 export async function action( {request} ) {
     const formData = await request.formData()
