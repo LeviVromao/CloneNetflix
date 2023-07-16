@@ -25,7 +25,7 @@ export default function Details() {
         const url = e.target.getAttribute('data-url')
         videoContainer.src = `https://www.youtube.com/embed/${url}`
     }
-    
+    console.log(video)
     return (
         <>
            <header className='header'>
@@ -63,13 +63,16 @@ export default function Details() {
                     >
                         Trailer
                     </p>
+                    {video[1]
+                    ?
                     <p 
                         className='second-opt' 
                         data-url={video[1].key}
                         onClick={ changeVideo }
                     >
                         Teaser
-                    </p>
+                    </p>: ""
+                     }
                 </div>
                 <iframe 
                     width="560" 

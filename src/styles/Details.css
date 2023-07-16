@@ -1,6 +1,5 @@
 header {
     background-size: cover;
-    height: 45vh;
 }
 
 .logo-container{
@@ -39,7 +38,6 @@ header {
 }
 
 main {
-    height: 55vh;
     text-align: center;
     background: black;
     padding-top: 21px;
@@ -86,11 +84,5 @@ main {
 @media (max-width: 569px){
     iframe {
         width: 97%;
-    }
-}
-
-@media (max-width: 440px){
-    header{
-        height: 56vh;
     }
 }
