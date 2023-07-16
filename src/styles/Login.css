@@ -75,3 +75,9 @@
     padding-left: 4px;
     color: white;
 }
+
+@media (max-width: 560px){
+    .formLogin{
+        width: 319px;
+    }
+}

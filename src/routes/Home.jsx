@@ -21,7 +21,7 @@ export default function Home() {
                         </Link>
                     </li>
                     <li className="li-home">
-                        <Link to={'/'}>
+                        <Link to={'/home/content'}>
                             <AiOutlineHome />
                         </Link>
                     </li>

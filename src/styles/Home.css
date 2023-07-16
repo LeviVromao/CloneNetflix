@@ -35,3 +35,9 @@
     width: 100%;
 }
 
+@media (max-width: 560px){
+    .nav-bar:hover {
+       width: 100%;
+    }
+}
+
