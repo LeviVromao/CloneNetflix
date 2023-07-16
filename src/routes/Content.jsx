@@ -1,5 +1,5 @@
 import '../styles/Content.css'
-import { getPopularMovies, getDetails } from '../api';
+import { getPopularMovies, getDetails } from '../services/api';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
@@ -24,7 +24,7 @@ export default function Films() {
             const nodeListItems = document.querySelectorAll('.item')
            
             const id = nodeListItems[currentItem].getAttribute('data-value');
-            const details = await getDetails(id, window.navigator.language);
+            const { details } = await getDetails(id, window.navigator.language);
             const containerIMG = document.querySelector('.container-img');
             containerIMG.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${details.backdrop_path}")`;
             containerIMG.style.backgroundPosition = 'center'
@@ -55,7 +55,7 @@ export default function Films() {
 
         const id = items[currentItem].getAttribute('data-value');
         
-        const details = await getDetails(id, window.navigator.language);
+        const { details } = await getDetails(id, window.navigator.language);
         const containerIMG = document.querySelector('.container-img');
         containerIMG.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${details.backdrop_path}")`;
         containerIMG.style.backgroundPosition = 'center';
@@ -77,7 +77,7 @@ export default function Films() {
 
         const id = items[currentItem].getAttribute('data-value');
         
-        const details = await getDetails(id, window.navigator.language);
+        const { details } = await getDetails(id, window.navigator.language);
         const containerIMG = document.querySelector('.container-img');
         containerIMG.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${details.backdrop_path}")`;
         containerIMG.style.backgroundPosition = 'center';

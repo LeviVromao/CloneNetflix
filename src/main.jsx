@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App, { action as registerAction } from './routes/App.jsx'
 import ErrorPage from './routes/Error-page.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './styles/index.css'
 import Home from './routes/Home.jsx'
 import Login, { action as loginAction } from './routes/Login.jsx'
 import Content, { loader as contentLoader } from './routes/Content.jsx'
 import Profile, { loader as profileLoader } from './routes/Profile.jsx'
+import Details, {loader as detailsLoader} from './routes/Details.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +34,12 @@ const router = createBrowserRouter([
         loader: profileLoader,
       }
     ]
+  },
+  {
+    path: 'content/:contentId',
+    element: <Details />,
+    errorElement: <ErrorPage />,
+    loader: detailsLoader
   },
   {
     path: '/login',

@@ -1,4 +1,4 @@
-import { API_CONFIG } from "./apiConfig";
+import { API_CONFIG } from "../apiConfig";
 const token = API_CONFIG.JWT || process.env.TOKEN;
 const apiKey = API_CONFIG.APIKEY || process.env.APIKEY;
 
@@ -19,17 +19,20 @@ export async function getPopularMovies(lang) {
 
 export async function getDetails(id, lang) {
     const url = `https://api.themoviedb.org/3/movie/${id}?language=${lang}`
+    const urlVideo = `https://api.themoviedb.org/3/movie/${id}/videos?language=${lang}`
     const options = {
         method: 'GET',
         headers: {
           accept: 'application/json',
           Authorization: `Bearer ${API_CONFIG.JWT}`
     }}
-
+    
+    const resVideo = await fetch(urlVideo, options);
     const res = await fetch(url, options);
     const data = await res.json();
+    const dataVideo = await resVideo.json();
 
-    return data;   
+    return {details: data, video: dataVideo.results};   
 }
 
 

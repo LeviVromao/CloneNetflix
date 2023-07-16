@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../styles/Profile.css'
-import { getUser, updateUser } from '../user';
+import { getUser, updateUser } from '../services/user';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom'
 
 export const loader = async ({ params }) => {

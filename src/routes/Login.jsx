@@ -1,6 +1,6 @@
 import { Link, Form, redirect } from 'react-router-dom'
 import '../styles/Login.css'
-import { authLogin } from '../user'
+import { authLogin } from '../services/user'
 
 export async function action( {request} ) {
     const formData = await request.formData()

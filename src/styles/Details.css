@@ -1,0 +1,96 @@
+header {
+    background-size: cover;
+    height: 45vh;
+}
+
+.logo-container{
+    float: right;
+}
+
+.title_subtitle{
+    margin-bottom: 19px;
+}
+
+.details {
+    height: 100%;
+    background: rgb(0 0 0 /76%);
+    color: white;
+    padding: 0 19px 0 14px;
+}
+
+.details h1 {
+    max-width: 729px;
+}
+
+.details .overview {
+    max-width: 710px;
+    margin-bottom: 8px;
+}
+
+.movie-data {
+    display: flex;
+    gap: 13px;
+    color: red;
+}
+
+.details p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+main {
+    height: 55vh;
+    text-align: center;
+    background: black;
+    padding-top: 21px;
+}
+
+.options_details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 177px;
+    margin: 0 auto;
+    height: 35px;
+    border: 1px solid white;
+    margin-bottom: 13px;
+}
+
+.options_details p {
+    height: 100%;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.options_details p:hover {
+    background: white;
+    color: black;
+    font-weight: 600;
+    width: 59%;
+    transition: all 0.5s;
+}
+
+.options_details p:active {
+    background: white;
+    color: black;
+    font-weight: 600;
+    width: 59%;
+    transition: all 0.5s; 
+}
+
+@media (max-width: 569px){
+    iframe {
+        width: 97%;
+    }
+}
+
+@media (max-width: 440px){
+    header{
+        height: 56vh;
+    }
+}
