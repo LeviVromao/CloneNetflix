@@ -1,5 +1,6 @@
 header {
     background-size: cover;
+    height: 43vh;
 }
 
 .logo-container{
@@ -23,7 +24,7 @@ header {
 
 .details .overview {
     max-width: 710px;
-    margin-bottom: 8px;
+    margin-bottom: 55px;
 }
 
 .movie-data {
@@ -41,6 +42,7 @@ main {
     text-align: center;
     background: black;
     padding-top: 21px;
+    height: 57vh;
 }
 
 .options_details {

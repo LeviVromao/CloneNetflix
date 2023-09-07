@@ -3,6 +3,7 @@ import { getPopularMovies, getDetails } from '../services/api';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 
 export const loader = async () => {
@@ -18,21 +19,6 @@ export default function Films() {
     const [ items, setItems ] = useState([]);
     const [ maxItems, setMaxItems ] = useState();
     const [ headerDetails, setHeaderDetails ] = useState([{}])
-    
-    useEffect(() => {
-        const getInitialImage = async () =>{
-            const nodeListItems = document.querySelectorAll('.item')
-           
-            const id = nodeListItems[currentItem].getAttribute('data-value');
-            const { details } = await getDetails(id, window.navigator.language);
-            const containerIMG = document.querySelector('.container-img');
-            containerIMG.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${details.backdrop_path}")`;
-            containerIMG.style.backgroundPosition = 'center'
-            containerIMG.backgroundSize = 'cover';
-            setHeaderDetails( details )
-        }
-        getInitialImage()
-    }, [])
 
     useEffect(() => {
         const nodeListItems = document.querySelectorAll('.item');
@@ -74,7 +60,7 @@ export default function Films() {
             inline: 'center',
             behavior: 'smooth',
         })
-
+        
         const id = items[currentItem].getAttribute('data-value');
         
         const { details } = await getDetails(id, window.navigator.language);
@@ -91,21 +77,25 @@ export default function Films() {
                     <div className="container-header">
                         <header className="home-header">
                             <div className="home-titles">
-                                <i>Films and Series by Levii13</i>
-                                <h1 className="content-info">
-                                    {headerDetails.title}
-                                </h1>
+                                <i className='icon_content'>Films and Series by Levii13</i>
+                                {headerDetails.title? 
+                                    <h1 className='content-info'>{headerDetails.title}</h1>
+                                :
+                                    <h1 >Veja trailers e teasers dos filmes mais populares atualmente! Escolha o filme clicando nas setas e clique no botao abaixo para saber mais.</h1>
+                                }
                             </div>
                             <p className="p-description">
                                 {headerDetails.overview}
                              </p>
+                                {headerDetails.title && (
                              <button className="bttn-info">
-                                <Link to={`/content/${headerDetails.id}`}
-                                    className='link-bttn-info'
-                                >
-                                    More info
-                                </Link>
-                            </button>
+                                    <Link to={`/content/${headerDetails.id}`}
+                                        className='link-bttn-info'
+                                    >
+                                        More info
+                                    </Link>
+                                </button>
+                                )}
                         </header>
                                 
                             

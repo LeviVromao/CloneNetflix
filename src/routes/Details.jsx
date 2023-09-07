@@ -25,7 +25,8 @@ export default function Details() {
         const url = e.target.getAttribute('data-url')
         videoContainer.src = `https://www.youtube.com/embed/${url}`
     }
-    console.log(video)
+    const pasteDate = details.release_date.split('-')
+    const formatedDate = pasteDate[2] + ' / ' + pasteDate[1] + ' / ' + pasteDate[0]
     return (
         <>
            <header className='header'>
@@ -45,9 +46,9 @@ export default function Details() {
                     </div>
                     <h2 className='overview'>{ details.overview }</h2>
                     <div className='movie-data'>
-                        <p>Nota {details.vote_average}</p>
+                        <p>Nota {details.vote_average.toFixed(1)}</p>
                         <p>Duração {details.runtime} minutos</p>
-                        <p>Data de Lançamento {details.release_date}</p>
+                        <p>Data de Lançamento: {formatedDate}</p>
                     </div>
                     
                 </div>
