@@ -40,7 +40,7 @@ export default function Profile() {
 
     return (
         <div className='container-content'>
-            <header>
+            <header className='cabecalho'>
                 <Link to="/home/content">
                     <img 
                         src="https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-1-1.png" 
