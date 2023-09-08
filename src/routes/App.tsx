@@ -1,5 +1,6 @@
 import { Form, redirect, Link } from 'react-router-dom'
 import { createUser } from '../services/user'
+import React from 'react'
 import '../styles/App.css'
 
 export async function action( {request} ) {
@@ -100,13 +101,13 @@ function App() {
     
             <div className="text--section3">
                 <h1>Baixe séries para assistir offline.</h1>
-                <h3>Salve seus títulos favoritos e sempre tenha algo para assistir.</h3>
+                <p>Salve seus títulos favoritos e sempre tenha algo para assistir.</p>
             </div>
     </section>
     <section className="section4">
         <div className="text--section4">
             <h1>Assista quando quiser.</h1>
-            <h2>Assista no celular, tablet, Smart TV ou notebook sem pagar a mais por isso.</h2>
+            <p>Assista no celular, tablet, Smart TV ou notebook sem pagar a mais por isso.</p>
         </div>
         <div className="container--principal--section4">
             <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png" alt="macbook image"/>

@@ -2,9 +2,7 @@ import '../styles/Content.css'
 import { getPopularMovies, getDetails } from '../services/api';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
-import { useEffect, useState } from 'react';
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
 
 export const loader = async () => {
     const lang = window.navigator.language;
@@ -17,12 +15,14 @@ export default function Films() {
     const { popularMovies } = useLoaderData();
     const [ currentItem, setCurrentItem  ] = useState(0);
     const [ items, setItems ] = useState([]);
-    const [ maxItems, setMaxItems ] = useState();
+    const [ maxItems, setMaxItems ] = useState(0);
     const [ headerDetails, setHeaderDetails ] = useState([{}])
 
     useEffect(() => {
         const nodeListItems = document.querySelectorAll('.item');
-        setItems(nodeListItems);
+        const itemsArray = Array.from(nodeListItems); 
+    
+        setItems(itemsArray);
         setMaxItems(nodeListItems.length)
 
     }, [ currentItem ])

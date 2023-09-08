@@ -1,8 +1,15 @@
 import { API_CONFIG } from "../apiConfig";
-const token = API_CONFIG.JWT || process.env.TOKEN;
-const apiKey = API_CONFIG.APIKEY || process.env.APIKEY;
+const token = API_CONFIG.JWT;
+const apiKey = API_CONFIG.APIKEY;
 
-export async function getPopularMovies(lang) {
+export interface IPopularMovies {
+    page: string,
+    results: Array<Object>,
+    total_pages: number,
+    total_results: number
+}
+
+export async function getPopularMovies(lang?: string): Promise<IPopularMovies> {
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=${lang}-US&page=1`
     const options = {
         method: 'GET',
@@ -13,7 +20,7 @@ export async function getPopularMovies(lang) {
 
     const res = await fetch(url, options);
     
-    const data = await res.json();
+    const data: IPopularMovies = await res.json();
     return data;
 }
 

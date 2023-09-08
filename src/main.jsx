@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App, { action as registerAction } from './routes/App.jsx'
+import App, { action as registerAction } from './routes/App.tsx'
 import ErrorPage from './routes/Error-page.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home.jsx'
