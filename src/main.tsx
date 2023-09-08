@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App, { action as registerAction } from './routes/App.tsx'
-import ErrorPage from './routes/Error-page.jsx'
+import App, { action as registerAction } from './routes/App.js'
+import ErrorPage from './routes/Error-page.js'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './routes/Home.jsx'
-import Login, { action as loginAction } from './routes/Login.jsx'
-import Content, { loader as contentLoader } from './routes/Content.tsx'
-import Profile, { loader as profileLoader } from './routes/Profile.jsx'
-import Details, {loader as detailsLoader} from './routes/Details.tsx'
+import Home from './routes/Home.js'
+import Login, { action as loginAction } from './routes/Login.js'
+import Content, { loader as contentLoader } from './routes/Content.js'
+import Profile, { loader as profileLoader } from './routes/Profile.js'
+import Details, {loader as detailsLoader} from './routes/Details.js'
 
 const router = createBrowserRouter([
   {
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
   }
 ])
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root') as Element | DocumentFragment).render(
   <React.StrictMode>
     <RouterProvider router={ router } />
   </React.StrictMode>,

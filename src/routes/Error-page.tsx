@@ -1,7 +1,10 @@
 import { useRouteError } from "react-router-dom";
 import '../styles/Error.css'
+import React from "react";
+import { IError } from "../Interfaces";
+
 export default function ErrorPage() {
-    const error = useRouteError();
+    const error = useRouteError() as IError;
     console.error(error)
     return (
         <>

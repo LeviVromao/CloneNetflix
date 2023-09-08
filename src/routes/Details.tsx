@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from 'react-router-dom';
-import { IDetails, getDetails } from '../services/api';
+import { getDetails } from '../services/api';
+import { IDetails } from '../Interfaces';
 import '../styles/Details.css';
 import { useEffect } from 'react';
 import React from 'react';

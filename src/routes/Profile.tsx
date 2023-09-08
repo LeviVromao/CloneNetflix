@@ -2,16 +2,19 @@ import { useState } from 'react';
 import '../styles/Profile.css'
 import { getUser, updateUser } from '../services/user';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom'
+import React from 'react';
+import { IUSer } from '../Interfaces';
 
 export const loader = async ({ params }) => {
     const { UserID } = params;
-    const user = await getUser( null, UserID);
-    return { name: user.name, image: user.image, id: user.id }
+    const user = await getUser( undefined, UserID);
+
+    if(user) return { name: user.name, image: user.image, id: user.id }
 }
 
 export default function Profile() {
     const navigate = useNavigate()
-    const { name, image, id } = useLoaderData()
+    const { name, image, id } = useLoaderData() as IUSer
     const [ picture, setPicture ] = useState('')
     const [ Name, setName ] = useState('')
 

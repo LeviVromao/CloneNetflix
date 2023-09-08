@@ -1,4 +1,5 @@
 import localforage from "localforage";
+import { IUSer } from "../Interfaces";
 
 let fakeCache = {};
 
@@ -17,10 +18,10 @@ return new Promise(res => {
 });
 }
 
-export async function createUser(email) {
-    await fakeNetwork();
+export async function createUser(email: string) {
+    await fakeNetwork(email);
     let id = Math.random().toString(36).substring(2, 9);
-    let user = {id, email, createdAt: Date.now() };
+    let user: IUSer = {id, email, createdAt: Date.now() };
     const alreadyExist = await getUser(user.email);
 
     if( alreadyExist ) return false
@@ -29,7 +30,7 @@ export async function createUser(email) {
     return user;
 }
 
-export async function authLogin( email ){
+export async function authLogin( email: string ){
     const user = await getUser( email )
 
     if( user ) {
@@ -39,27 +40,30 @@ export async function authLogin( email ){
         }
     }
 
-    return false
-}
-
-export async function getUsers(query) {
-    await fakeNetwork(`getContacts:${query}`);
-    let contacts = await localforage.getItem("users");
-    if (!contacts) contacts = [];
-    if (query) {
-      contacts = matchSorter(contacts, query, { keys: 'email' });
+    return {
+        exist: false,
+        user: null
     }
-    return contacts.sort(sortBy("last", "createdAt"));
 }
 
-export async function getUser(email, id) {
+// export async function getUsers(query) {
+//     await fakeNetwork(`getContacts:${query}`);
+//     let contacts = await localforage.getItem("users");
+//     if (!contacts) contacts = [];
+//     if (query) {
+//       contacts = matchSorter(contacts, query, { keys: 'email' });
+//     }
+//     return contacts.sort(sortBy("last", "createdAt"));
+// }
+
+export async function getUser(email?: string, id?: string | number) {
     await fakeNetwork(`contact:${email}`);
-    let user;
-    let users = await localforage.getItem("users");
+    let user: IUSer | undefined;
+    let users: Array<IUSer> | null = await localforage.getItem("users");
 
     if(!users) return null;
 
-    if(id) {
+    if(id && !email) {
         user = users.find(user => user.id === id);
     
     } else {
@@ -70,8 +74,8 @@ export async function getUser(email, id) {
     return user? user : null;
 }
 
-export async function updateUser(id, name, image) {
-    const users = await localforage.getItem('users');
+export async function updateUser(id: string | number, name: string, image: string) {
+    const users: IUSer[] | null = await localforage.getItem('users');
     if (!users) return null;
   
     const updatedUsers = users.map((user) => {
@@ -87,20 +91,23 @@ export async function updateUser(id, name, image) {
     return updatedUsers.find((user) => user.id === id);
 }
 
-export async function deleteUser(id) {
-    let users = await localforage.getItem("users");
-    let index = users.find(user => user.id === id);
-    if (index > -1) {
-
-        users.splice(index, 1);
-        await set(users);
-        return true;
+export async function deleteUser(id: string | number) {
+    let users: Array<IUSer> | null = await localforage.getItem("users");
+    let index
+    
+    if(users) {
+        index = users.find(user => user.id === id);
+        if (index > -1) {
+            users.splice(index, 1);
+            await set(users);
+            return true;
+        }
     }
     return false;
   }
   
-async function set(user) {
-    const users = (await localforage.getItem('users')) || [];
+async function set(user: IUSer[] | IUSer) {
+    const users: Array<Object> | null = (await localforage.getItem('users')) || [];
     console.log(users)
     users.push(user);
     await localforage.setItem('users', users);

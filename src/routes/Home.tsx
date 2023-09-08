@@ -4,15 +4,18 @@ import { AiOutlineHome } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import '../styles/Home.css'
 import { Helmet } from "react-helmet"
+import React from "react"
 
 export default function Home() {
-    const { id } = JSON.parse(localStorage.getItem('user'));
+    const userItem = localStorage.getItem('user');
+    const user = userItem ? JSON.parse(userItem) : null;
+    const id = user?.id ?? '';
 
     return (
         <div className="container-home">
-            <Helmet>
+            {/* <Helmet>
                 <title>Levi - Clone - Strawberries</title>
-            </Helmet>
+            </Helmet> */}
             <nav className="nav-bar">
                 <ul className="ul-home">
                     <li className="li-home">

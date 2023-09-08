@@ -1,5 +1,6 @@
 import '../styles/Content.css'
-import { getPopularMovies, getDetails, IPopularMovies } from '../services/api';
+import { getPopularMovies, getDetails } from '../services/api';
+import { IPopularMovies } from '../Interfaces';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import React, { useEffect, useState } from 'react';
