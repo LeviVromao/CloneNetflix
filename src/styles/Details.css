@@ -1,6 +1,10 @@
-header {
+.headerDetails {
     background-size: cover;
-    height: 43vh;
+}
+
+.text_container {
+    max-width: 1305px;
+    margin: 0 auto;
 }
 
 .logo-container{
@@ -24,7 +28,7 @@ header {
 
 .details .overview {
     max-width: 710px;
-    margin-bottom: 55px;
+    margin-bottom: 22px;
 }
 
 .movie-data {
@@ -38,11 +42,16 @@ header {
     font-weight: 600;
 }
 
-main {
+.video_container {
     text-align: center;
     background: black;
     padding-top: 21px;
-    height: 57vh;
+    height: 69vh;
+}
+
+iframe {
+    width: 560px;
+    height: 315px;
 }
 
 .options_details {
@@ -86,5 +95,54 @@ main {
 @media (max-width: 569px){
     iframe {
         width: 97%;
+    }
+
+    .logo-netflix {
+        width: 124px;
+    }
+
+    .details p {
+        font-size: 18px;
+    }
+
+    .details .overview {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .movie-data {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 1700px) {
+    .details h1 {
+        font-size: 68px;
+    }
+
+    .options_details {
+        width: 22vw;
+        height: 60px;
+    }
+
+    .title_subtitle h3 {
+        font-size: 31px;
+    }
+
+    .details .overview {
+        font-size: 36px;
+    }
+
+    .details p {
+        font-size: 36px;
+    }
+
+    .video_container {
+        height: 100vh;
+    }
+
+    iframe {
+        width: 55vw;
+        height: 660px;
     }
 }

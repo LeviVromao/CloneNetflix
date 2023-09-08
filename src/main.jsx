@@ -5,9 +5,9 @@ import ErrorPage from './routes/Error-page.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home.jsx'
 import Login, { action as loginAction } from './routes/Login.jsx'
-import Content, { loader as contentLoader } from './routes/Content.jsx'
+import Content, { loader as contentLoader } from './routes/Content.tsx'
 import Profile, { loader as profileLoader } from './routes/Profile.jsx'
-import Details, {loader as detailsLoader} from './routes/Details.jsx'
+import Details, {loader as detailsLoader} from './routes/Details.tsx'
 
 const router = createBrowserRouter([
   {

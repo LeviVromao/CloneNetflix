@@ -1,5 +1,5 @@
 import '../styles/Content.css'
-import { getPopularMovies, getDetails } from '../services/api';
+import { getPopularMovies, getDetails, IPopularMovies } from '../services/api';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import React, { useEffect, useState } from 'react';
@@ -12,11 +12,11 @@ export const loader = async () => {
 
 
 export default function Films() {
-    const { popularMovies } = useLoaderData();
+    const { popularMovies } = useLoaderData() as IPopularMovies;
     const [ currentItem, setCurrentItem  ] = useState(0);
-    const [ items, setItems ] = useState([]);
+    const [ items, setItems ] = useState(Element['']);
     const [ maxItems, setMaxItems ] = useState(0);
-    const [ headerDetails, setHeaderDetails ] = useState([{}])
+    const [ headerDetails, setHeaderDetails ] = useState(Object)
 
     useEffect(() => {
         const nodeListItems = document.querySelectorAll('.item');
@@ -42,7 +42,7 @@ export default function Films() {
         const id = items[currentItem].getAttribute('data-value');
         
         const { details } = await getDetails(id, window.navigator.language);
-        const containerIMG = document.querySelector('.container-img');
+        const containerIMG = document.querySelector('.container-img') as HTMLElement;
         containerIMG.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${details.backdrop_path}")`;
         containerIMG.style.backgroundPosition = 'center';
         containerIMG.style.backgroundSize = 'cover'
@@ -64,7 +64,7 @@ export default function Films() {
         const id = items[currentItem].getAttribute('data-value');
         
         const { details } = await getDetails(id, window.navigator.language);
-        const containerIMG = document.querySelector('.container-img');
+        const containerIMG = document.querySelector('.container-img') as HTMLElement;
         containerIMG.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${details.backdrop_path}")`;
         containerIMG.style.backgroundPosition = 'center';
         containerIMG.style.backgroundSize = 'cover'
@@ -81,7 +81,7 @@ export default function Films() {
                                 {headerDetails.title? 
                                     <h1 className='content-info'>{headerDetails.title}</h1>
                                 :
-                                    <h1 >Veja trailers e teasers dos filmes mais populares atualmente! Escolha o filme clicando nas setas e clique no botao abaixo para saber mais.</h1>
+                                    <h3 className='substitute'>Veja trailers e teasers dos filmes mais populares atualmente! Escolha o filme clicando nas setas e clique no botao abaixo para saber mais.</h3>
                                 }
                             </div>
                             <p className="p-description">
